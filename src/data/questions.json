@@ -1,0 +1,32 @@
+[
+    {
+        "id": "q1",
+        "text": "新しい文房具を買うと、勉強のやる気が出る",
+        "factor": "B2",
+        "reverse": false
+    },
+    {
+        "id": "q2",
+        "text": "テスト前は、計画を立ててから勉強する方だ",
+        "factor": "B3",
+        "reverse": false
+    },
+    {
+        "id": "q3",
+        "text": "一人で勉強するより、誰かと一緒に勉強する方が好きだ",
+        "factor": "A4",
+        "reverse": true
+    },
+    {
+        "id": "q4",
+        "text": "わからない問題があったら、すぐに答えを見る",
+        "factor": "C1",
+        "reverse": false
+    },
+    {
+        "id": "q5",
+        "text": "将来の夢や目標が決まっている",
+        "factor": "C5",
+        "reverse": false
+    }
+]
