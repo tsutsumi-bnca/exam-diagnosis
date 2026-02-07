@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Screen, Answers } from './types';
 import questionData from './data/questions.json';
 import { StartScreen } from './components/StartScreen';

@@ -11,7 +11,6 @@ interface QuestionScreenProps {
 
 export const QuestionScreen: React.FC<QuestionScreenProps> = ({
     questions,
-    answers,
     onAnswer,
     onBack,
     onFinish,
