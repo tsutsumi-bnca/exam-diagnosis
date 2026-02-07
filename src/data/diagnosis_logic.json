@@ -1,0 +1,59 @@
+{
+    "rules": [
+        {
+            "id": "type_A_env_sensitive",
+            "priority": 100,
+            "conditions": {
+                "or": [
+                    {
+                        "factor": "A1",
+                        "min": 5
+                    },
+                    {
+                        "factor": "A2",
+                        "min": 5
+                    },
+                    {
+                        "factor": "A4",
+                        "min": 5
+                    },
+                    {
+                        "factor": "A5",
+                        "min": 5
+                    },
+                    {
+                        "factor": "A6",
+                        "min": 5
+                    }
+                ]
+            },
+            "content": {
+                "student": {
+                    "title": "環境に敏感なタイプ",
+                    "message": "キミは、周りの環境や人間関係に影響を受けやすいタイプかもしれません。まずは自分がリラックスできる場所を見つけることが大切です。"
+                },
+                "parent": {
+                    "title": "環境調整がカギ",
+                    "message": "お子様は学習環境や周囲の人間関係に敏感な可能性があります。本人が安心して集中できる環境作り（静かな部屋、相性の良い先生など）を優先してあげてください。"
+                }
+            }
+        },
+        {
+            "id": "type_B_learning_style",
+            "priority": 50,
+            "conditions": {
+                "intro": "ここに判定ロジックを追加していきます"
+            },
+            "content": {
+                "student": {
+                    "title": "学習スタイル模索タイプ",
+                    "message": "自分に合ったやり方がまだ見つかっていないかも？"
+                },
+                "parent": {
+                    "title": "学習スタイルの見直し",
+                    "message": "やり方を変えるだけで伸びる可能性があります。"
+                }
+            }
+        }
+    ]
+}
