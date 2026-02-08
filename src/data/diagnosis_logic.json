@@ -1,59 +1,70 @@
 {
-    "rules": [
+    "version": "mvp-25q-v1",
+    "thresholds": {
+        "env_diff": 0.15,
+        "load_warn": 0.7,
+        "uncertainty_warn": 0.7
+    },
+    "environment": {
+        "private": {
+            "id": "ENV_PRIVATE",
+            "label": "私立フィット（構造×支援）"
+        },
+        "public": {
+            "id": "ENV_PUBLIC",
+            "label": "公立フィット（自律×自由）"
+        },
+        "neutral": {
+            "id": "ENV_NEUTRAL",
+            "label": "どっちもOK（中立）"
+        }
+    },
+    "b_factors": [
         {
-            "id": "type_A_env_sensitive",
-            "priority": 100,
-            "conditions": {
-                "or": [
-                    {
-                        "factor": "A1",
-                        "min": 5
-                    },
-                    {
-                        "factor": "A2",
-                        "min": 5
-                    },
-                    {
-                        "factor": "A4",
-                        "min": 5
-                    },
-                    {
-                        "factor": "A5",
-                        "min": 5
-                    },
-                    {
-                        "factor": "A6",
-                        "min": 5
-                    }
-                ]
-            },
-            "content": {
-                "student": {
-                    "title": "環境に敏感なタイプ",
-                    "message": "キミは、周りの環境や人間関係に影響を受けやすいタイプかもしれません。まずは自分がリラックスできる場所を見つけることが大切です。"
-                },
-                "parent": {
-                    "title": "環境調整がカギ",
-                    "message": "お子様は学習環境や周囲の人間関係に敏感な可能性があります。本人が安心して集中できる環境作り（静かな部屋、相性の良い先生など）を優先してあげてください。"
-                }
-            }
+            "key": "B2",
+            "label": "実行力（計画→調整→継続）"
         },
         {
-            "id": "type_B_learning_style",
-            "priority": 50,
-            "conditions": {
-                "intro": "ここに判定ロジックを追加していきます"
-            },
-            "content": {
-                "student": {
-                    "title": "学習スタイル模索タイプ",
-                    "message": "自分に合ったやり方がまだ見つかっていないかも？"
-                },
-                "parent": {
-                    "title": "学習スタイルの見直し",
-                    "message": "やり方を変えるだけで伸びる可能性があります。"
-                }
-            }
+            "key": "B3",
+            "label": "振り返り力（原因を見て伸ばす）"
+        },
+        {
+            "key": "B5",
+            "label": "助けを求める力（聞く/調べる）"
+        },
+        {
+            "key": "B6",
+            "label": "集中の作り方（短時間でもやり切る）"
+        },
+        {
+            "key": "B7",
+            "label": "折れにくさ（切り替え耐性）"
+        }
+    ],
+    "c_tags": [
+        {
+            "key": "C1_people",
+            "label": "人×支援"
+        },
+        {
+            "key": "C1_system",
+            "label": "仕組み×理解"
+        },
+        {
+            "key": "C2_struct",
+            "label": "整理×伝える"
+        },
+        {
+            "key": "C2_create",
+            "label": "創る×表現"
+        },
+        {
+            "key": "C4_dialog",
+            "label": "対話で伸びる"
+        },
+        {
+            "key": "C5_uncertain",
+            "label": "不確実性が苦手（注意）"
         }
     ]
 }

@@ -5,7 +5,7 @@ export interface Question {
     reverse: boolean;
 }
 
-export type Screen = 'start' | 'question' | 'result';
+export type Screen = 'start' | 'question' | 'result' | 'history';
 
 export interface Answers {
     [key: string]: number;

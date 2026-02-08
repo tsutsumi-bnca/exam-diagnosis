@@ -1,32 +1,146 @@
 [
     {
-        "id": "q1",
-        "text": "新しい文房具を買うと、勉強のやる気が出る",
-        "factor": "B2",
+        "id": "a1-1",
+        "text": "やることが細かく決まっている方が、安心して進められる",
+        "factor": "A1",
         "reverse": false
     },
     {
-        "id": "q2",
-        "text": "テスト前は、計画を立ててから勉強する方だ",
-        "factor": "B3",
+        "id": "a1-3",
+        "text": "ルールや決まりが多いと、やる気が下がりやすい",
+        "factor": "A1",
+        "reverse": true
+    },
+    {
+        "id": "a2-1",
+        "text": "自分で計画を立てて進めるのはわりと得意だ",
+        "factor": "A2",
         "reverse": false
     },
     {
-        "id": "q3",
-        "text": "一人で勉強するより、誰かと一緒に勉強する方が好きだ",
+        "id": "a2-3",
+        "text": "自由にしていいと言われると、何からやるか迷いがちだ",
+        "factor": "A2",
+        "reverse": true
+    },
+    {
+        "id": "a4-1",
+        "text": "こまめにチェックしてもらえる方が続けやすい",
+        "factor": "A4",
+        "reverse": false
+    },
+    {
+        "id": "a4-2",
+        "text": "見られている感じが強いと、やる気が落ちる",
         "factor": "A4",
         "reverse": true
     },
     {
-        "id": "q4",
-        "text": "わからない問題があったら、すぐに答えを見る",
+        "id": "a5-2",
+        "text": "納得できない決まりに従うのがかなり苦手だ",
+        "factor": "A5",
+        "reverse": true
+    },
+    {
+        "id": "a6-2",
+        "text": "疲れると、家ではほとんど勉強できなくなりやすい",
+        "factor": "A6",
+        "reverse": false
+    },
+    {
+        "id": "b2-1",
+        "text": "計画を立てても、状況に合わせて直しながら続けられる",
+        "factor": "B2",
+        "reverse": false
+    },
+    {
+        "id": "b2-2",
+        "text": "予定通りにいかないと崩れやすい",
+        "factor": "B2",
+        "reverse": true
+    },
+    {
+        "id": "b3-1",
+        "text": "間違えた問題は「なぜ間違えたか」を考える方だ",
+        "factor": "B3",
+        "reverse": false
+    },
+    {
+        "id": "b3-2",
+        "text": "原因まではあまり考えない",
+        "factor": "B3",
+        "reverse": true
+    },
+    {
+        "id": "b6-2",
+        "text": "短い時間でも集中してやり切る方法を持っている",
+        "factor": "B6",
+        "reverse": false
+    },
+    {
+        "id": "b6-1",
+        "text": "勉強中に気が散るものがあると、負けやすい",
+        "factor": "B6",
+        "reverse": true
+    },
+    {
+        "id": "b7-1",
+        "text": "うまくいかない日があっても、次の日に切り替えられる",
+        "factor": "B7",
+        "reverse": false
+    },
+    {
+        "id": "b7-2",
+        "text": "失敗すると「自分はダメだ」と思いがちだ",
+        "factor": "B7",
+        "reverse": true
+    },
+    {
+        "id": "b5-1",
+        "text": "分からない所は、誰かに聞いたり調べたりする",
+        "factor": "B5",
+        "reverse": false
+    },
+    {
+        "id": "b5-2",
+        "text": "聞くのが面倒で放置しがちだ",
+        "factor": "B5",
+        "reverse": true
+    },
+    {
+        "id": "c1-1",
+        "text": "人の悩みや気持ちを考えるのがわりと好きだ",
         "factor": "C1",
         "reverse": false
     },
     {
-        "id": "q5",
-        "text": "将来の夢や目標が決まっている",
-        "factor": "C5",
+        "id": "c1-2",
+        "text": "仕組みやルールを理解するのが楽しい",
+        "factor": "C1",
         "reverse": false
+    },
+    {
+        "id": "c2-1",
+        "text": "情報を整理して分かりやすくするのが得意だ",
+        "factor": "C2",
+        "reverse": false
+    },
+    {
+        "id": "c2-2",
+        "text": "思いついたアイデアを形にするのが好きだ",
+        "factor": "C2",
+        "reverse": false
+    },
+    {
+        "id": "c4-1",
+        "text": "人と話しながら進める方が力が出る",
+        "factor": "C4",
+        "reverse": false
+    },
+    {
+        "id": "c5-2",
+        "text": "答えがすぐ出ないと、不安になりやすい",
+        "factor": "C5",
+        "reverse": true
     }
 ]
