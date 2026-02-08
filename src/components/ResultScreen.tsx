@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Answers } from '../types';
 import { runDiagnosis } from '../lib/diagnosis';
 import {
@@ -254,7 +254,7 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({ answers, onReset }) 
                     </div>
                 </div>
 
-                // Cram section in FitVisualizationBlock
+
                 <div>
                     <h4 style={{ fontSize: '0.9rem', fontWeight: 'bold', color: 'var(--text-sub)', marginBottom: '0.75rem', textAlign: 'center' }}>
                         塾・学習環境
@@ -444,38 +444,71 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({ answers, onReset }) 
         </div>
     );
 
-    // ... imports
+
+
+    // Simple Toast Component (Duplicated for now to avoid large refactor)
+    const Toast = ({ message, onClose }: { message: string, onClose: () => void }) => {
+        useEffect(() => {
+            const timer = setTimeout(onClose, 2000);
+            return () => clearTimeout(timer);
+        }, [onClose]);
+
+        return (
+            <div style={{
+                position: 'fixed',
+                bottom: '2rem',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                color: 'white',
+                padding: '0.75rem 1.5rem',
+                borderRadius: '50px',
+                fontSize: '0.9rem',
+                zIndex: 9999,
+                animation: 'fadeIn 0.3s ease-out'
+            }}>
+                {message}
+            </div>
+        );
+    };
 
     const ShareAppButton = () => {
+        const [showToast, setShowToast] = useState(false);
+
         const handleAppShare = async () => {
             // Use base URL for app share
             const appUrl = window.location.origin + window.location.pathname;
             const shared = await shareUrl(appUrl, "進路コンパス");
-            if (!shared) alert("リンクをコピーしました！");
+            if (!shared) {
+                setShowToast(true);
+            }
         };
 
         return (
-            <button
-                onClick={handleAppShare}
-                style={{
-                    background: 'rgba(46, 184, 134, 0.1)',
-                    border: '1px solid #2eb886',
-                    color: '#2eb886',
-                    borderRadius: '99px',
-                    padding: '0.75rem 2rem',
-                    fontSize: '1rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '0.5rem',
-                    fontWeight: 'bold',
-                    cursor: 'pointer',
-                    margin: '2rem auto 0'
-                }}
-            >
-                <span>📣</span>
-                このアプリを教える
-            </button>
+            <>
+                <button
+                    onClick={handleAppShare}
+                    style={{
+                        background: 'rgba(46, 184, 134, 0.1)',
+                        border: '1px solid #2eb886',
+                        color: '#2eb886',
+                        borderRadius: '99px',
+                        padding: '0.75rem 2rem',
+                        fontSize: '1rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '0.5rem',
+                        fontWeight: 'bold',
+                        cursor: 'pointer',
+                        margin: '2rem auto 0'
+                    }}
+                >
+                    <span>📣</span>
+                    このアプリを教える
+                </button>
+                {showToast && <Toast message="リンクをコピーしました" onClose={() => setShowToast(false)} />}
+            </>
         );
     };
 
