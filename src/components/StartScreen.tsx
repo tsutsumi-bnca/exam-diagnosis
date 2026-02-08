@@ -1,9 +1,42 @@
 import React from 'react';
 
+import { shareUrl } from '../lib/share';
+
 interface StartScreenProps {
     onStart: () => void;
     onShowHistory?: () => void;
 }
+
+const ShareAppButton = () => {
+    const handleAppShare = async () => {
+        const appUrl = window.location.origin + window.location.pathname;
+        const shared = await shareUrl(appUrl, "進路コンパス - 高校受験診断");
+        if (!shared) alert("リンクをコピーしました！");
+    };
+
+    return (
+        <button
+            onClick={handleAppShare}
+            style={{
+                marginTop: '1.5rem',
+                background: 'rgba(46, 184, 134, 0.1)',
+                border: '1px solid #2eb886',
+                color: '#2eb886',
+                borderRadius: '99px',
+                padding: '0.75rem 2rem',
+                fontSize: '1rem',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                fontWeight: 'bold',
+                cursor: 'pointer'
+            }}
+        >
+            <span>📣</span>
+            このアプリを教える
+        </button>
+    );
+};
 
 export const StartScreen: React.FC<StartScreenProps> = ({ onStart, onShowHistory }) => {
     return (
@@ -137,6 +170,7 @@ export const StartScreen: React.FC<StartScreenProps> = ({ onStart, onShowHistory
                                 保存した結果を見る
                             </button>
                         )}
+                        <ShareAppButton />
                     </div>
                 </div>
 

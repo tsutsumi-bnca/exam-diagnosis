@@ -444,33 +444,46 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({ answers, onReset }) 
         </div>
     );
 
+    // ... imports
+
+    const ShareAppButton = () => {
+        const handleAppShare = async () => {
+            // Use base URL for app share
+            const appUrl = window.location.origin + window.location.pathname;
+            const shared = await shareUrl(appUrl, "進路コンパス");
+            if (!shared) alert("リンクをコピーしました！");
+        };
+
+        return (
+            <button
+                onClick={handleAppShare}
+                style={{
+                    background: 'rgba(46, 184, 134, 0.1)',
+                    border: '1px solid #2eb886',
+                    color: '#2eb886',
+                    borderRadius: '99px',
+                    padding: '0.75rem 2rem',
+                    fontSize: '1rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.5rem',
+                    fontWeight: 'bold',
+                    cursor: 'pointer',
+                    margin: '2rem auto 0'
+                }}
+            >
+                <span>📣</span>
+                このアプリを教える
+            </button>
+        );
+    };
+
     return (
         <div style={{ minHeight: '100vh', background: '#f0fdf4', padding: '2rem 1.5rem 6rem' }}>
             <div style={{ maxWidth: '600px', margin: '0 auto' }}>
 
-                {/* Mode Switcher / Back Button (Top) */}
-                {isParent && (
-                    <div style={{ marginBottom: '1rem' }}>
-                        <button
-                            onClick={handleBackToStudent}
-                            style={{
-                                background: 'rgba(46, 184, 134, 0.1)',
-                                border: '1px solid #2eb886',
-                                color: '#2eb886',
-                                borderRadius: '99px',
-                                padding: '0.5rem 1rem',
-                                fontSize: '0.9rem',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '0.5rem',
-                                fontWeight: 'bold',
-                                cursor: 'pointer'
-                            }}
-                        >
-                            ← 生徒（本人）モードに戻る
-                        </button>
-                    </div>
-                )}
+                {/* Mode Switcher / Back Button (Top) REMOVED */}
 
                 <MainResultBlock isParent={isParent} />
                 <ActionButtons />
@@ -479,6 +492,7 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({ answers, onReset }) 
 
                 {isParent ? (
                     <>
+                        {/* ... AdviceBlock, etc ... */}
                         <AdviceBlock />
                         <ComfortCard>
                             <SectionHeader icon="🗣️" title="声かけの変換" />
@@ -510,11 +524,13 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({ answers, onReset }) 
                                     診断トップに戻る
                                 </button>
                             </div>
+                            <ShareAppButton />
                         </div>
                     </>
                 ) : (
                     // Student View
                     <>
+                        {/* ... ComfortCard ... */}
                         <ComfortCard>
                             <SectionHeader icon="🚀" title="最初のアクション" />
                             {/* Summary */}
@@ -552,6 +568,7 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({ answers, onReset }) 
                                     診断トップに戻る
                                 </button>
                             </div>
+                            <ShareAppButton />
                         </div>
                     </>
                 )}
