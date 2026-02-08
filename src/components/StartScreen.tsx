@@ -131,8 +131,7 @@ export const StartScreen: React.FC<StartScreenProps> = ({ onStart, onShowHistory
                         lineHeight: '1.8',
                         fontWeight: 500
                     }}>
-                        24問の質問に答えて、あなたにぴったりの<br />
-                        学習スタイルや志望校選びのヒントを見つけよう！
+                        24問の質問に答えて、あなたにぴったりの学習スタイルや志望校選びのヒントを見つけよう！
                     </p>
 
                     {/* CTA Button */}
