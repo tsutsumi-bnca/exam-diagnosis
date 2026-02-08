@@ -486,7 +486,6 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({ answers, onReset }) 
                 {/* Mode Switcher / Back Button (Top) REMOVED */}
 
                 <MainResultBlock isParent={isParent} />
-                <ActionButtons />
                 <FitVisualizationBlock />
                 <StressBlock />
 
